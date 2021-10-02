@@ -21,7 +21,7 @@
         <v-col
           cols="12"
           sm="6"
-          class="flex text-center mt-9 ma-0 pa-0 red--text"
+          class="mt-5 text-center red--text"
           >{{ timeLeft }} left</v-col
         >
         <v-col class="mt-5" cols="12" sm="1">
