@@ -124,7 +124,7 @@ export default {
 </script>
 
 <style>
-. {
+.flag-left {
   /* display: flex;  
     justify-content: flex-end; */
   border-top-right-radius: 20px;

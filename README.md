@@ -3,6 +3,14 @@
 - Fantasy sports platform
 
 ### **How to run dev server:**
+Tools which need to install before start:
+
+	Node Js:
+		https://nodejs.org/en/
+		Test : npm -version  // 6.14.10
+	Python:
+		https://www.python.org/
+		Test : python -V // Python 3.8.8
 
 #### first clone the project:
 
