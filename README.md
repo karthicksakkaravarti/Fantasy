@@ -28,4 +28,5 @@ Tools which need to install before start:
 ~~~~
     
     pip install -r requirement.txt
+    python manage.py migrate
     python manage.py runserver

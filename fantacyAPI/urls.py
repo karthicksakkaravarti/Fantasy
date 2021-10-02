@@ -30,6 +30,6 @@ class IndexView( TemplateView):
         return super().get(request, *args, **kwargs)
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('fantasy', IndexView.as_view(), name='Dashboard'),
+    path('', IndexView.as_view(), name='Dashboard'),
 
 ]
