@@ -54,7 +54,7 @@ ROOT_URLCONF = 'fantacyAPI.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['dist'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -117,4 +117,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/fantasy/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+# Place static in the same location as webpack build files
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'dist', 'fantasy' ,'static'),
+    os.path.join(BASE_DIR, 'public'),
+    os.path.join(BASE_DIR, 'media')
+    ]

@@ -14,8 +14,22 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import HttpResponseRedirect
+from django.urls import path, reverse
+from django.views.generic import TemplateView
 
+
+class IndexView( TemplateView):
+    template_name = 'index.html'
+
+    def get(self, request, *args, **kwargs):
+        print(request.GET)
+        if request.GET.get('logout', None):
+            return HttpResponseRedirect(reverse('logout-sso'))
+        return super().get(request, *args, **kwargs)
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('fantasy', IndexView.as_view(), name='Dashboard'),
+
 ]
