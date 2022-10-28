@@ -14,9 +14,9 @@ from pathlib import Path
 from django.core.asgi import get_asgi_application
 
 # This allows easy placement of apps within the interior
-# fantasy directory.
+# fantasy11 directory.
 ROOT_DIR = Path(__file__).resolve(strict=True).parent.parent
-sys.path.append(str(ROOT_DIR / "fantasy"))
+sys.path.append(str(ROOT_DIR / "fantasy11"))
 
 # If DJANGO_SETTINGS_MODULE is unset, default to the local settings
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.local")

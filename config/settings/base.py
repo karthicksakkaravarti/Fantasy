@@ -6,8 +6,8 @@ from pathlib import Path
 import environ
 
 ROOT_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
-# fantasy/
-APPS_DIR = ROOT_DIR / "fantasy"
+# fantasy11/
+APPS_DIR = ROOT_DIR / "fantasy11"
 env = environ.Env()
 
 READ_DOT_ENV_FILE = env.bool("DJANGO_READ_DOT_ENV_FILE", default=False)
@@ -44,7 +44,7 @@ LOCALE_PATHS = [str(ROOT_DIR / "locale")]
 DATABASES = {
     "default": env.db(
         "DATABASE_URL",
-        default="postgres:///fantasy",
+        default="postgres:///fantasy11",
     ),
 }
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
@@ -85,7 +85,7 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
-    "fantasy.users",
+    "fantasy11.users",
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -94,7 +94,7 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 # MIGRATIONS
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#migration-modules
-MIGRATION_MODULES = {"sites": "fantasy.contrib.sites.migrations"}
+MIGRATION_MODULES = {"sites": "fantasy11.contrib.sites.migrations"}
 
 # AUTHENTICATION
 # ------------------------------------------------------------------------------
@@ -189,7 +189,7 @@ TEMPLATES = [
                 "django.template.context_processors.static",
                 "django.template.context_processors.tz",
                 "django.contrib.messages.context_processors.messages",
-                "fantasy.users.context_processors.allauth_settings",
+                "fantasy11.users.context_processors.allauth_settings",
             ],
         },
     }
@@ -294,13 +294,13 @@ ACCOUNT_EMAIL_REQUIRED = True
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
-ACCOUNT_ADAPTER = "fantasy.users.adapters.AccountAdapter"
+ACCOUNT_ADAPTER = "fantasy11.users.adapters.AccountAdapter"
 # https://django-allauth.readthedocs.io/en/latest/forms.html
-ACCOUNT_FORMS = {"signup": "fantasy.users.forms.UserSignupForm"}
+ACCOUNT_FORMS = {"signup": "fantasy11.users.forms.UserSignupForm"}
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
-SOCIALACCOUNT_ADAPTER = "fantasy.users.adapters.SocialAccountAdapter"
+SOCIALACCOUNT_ADAPTER = "fantasy11.users.adapters.SocialAccountAdapter"
 # https://django-allauth.readthedocs.io/en/latest/forms.html
-SOCIALACCOUNT_FORMS = {"signup": "fantasy.users.forms.UserSocialSignupForm"}
+SOCIALACCOUNT_FORMS = {"signup": "fantasy11.users.forms.UserSocialSignupForm"}
 
 # django-rest-framework
 # -------------------------------------------------------------------------------
